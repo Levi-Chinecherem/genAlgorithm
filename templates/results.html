@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction Results{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-4">Prediction Results</h1>
+<div class="bg-white p-6 rounded-lg shadow-md mb-6">
+    <h2 class="text-2xl font-semibold mb-4">DataFrame</h2>
+    <div class="overflow-x-auto">
+        {{ dataframe|safe }}
+    </div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md mb-6 h-[70%]">
+    <h2 class="text-2xl font-semibold mb-4">Distribution of Predicted Final Grades</h2>
+    <img src="{{ hist_img }}" alt="Distribution of Predicted Final Grades" class="w-full">
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md mb-6 h-[70%]">
+    <h2 class="text-2xl font-semibold mb-4">Student Performance Categories</h2>
+    <img src="{{ bar_img }}" alt="Student Performance Categories" class="w-full md:h-1/2">
+</div>
+{% endblock %}

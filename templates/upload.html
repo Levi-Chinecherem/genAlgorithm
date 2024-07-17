@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="flex flex-col items-center">
+    <div class="max-w-md w-full bg-white shadow-md rounded p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-4 text-center">Upload CSV File for Prediction</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}<br>
+            <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Upload</button>
+        </form>
+    </div>
+    <div class="max-w-4xl w-full bg-white shadow-md rounded p-6">
+        <h2 class="text-2xl font-bold mb-4 text-center">About the System</h2>
+        <p class="mb-4">
+            This system predicts student performance based on various factors such as attendance, previous grades, study hours, assignment scores, and participation in extracurricular activities.
+        </p>
+        <p class="mb-4">
+            By uploading a CSV file with the necessary data, the system will use our trained model to predict the final grade and categorize the performance of students.
+        </p>
+        <p class="mb-4">
+            The predicted final grade will be displayed along with visualizations showing the distribution of grades and performance categories.
+        </p>
+        <p class="mb-4">
+            The goal of this system is to provide insights into student performance, helping educators and students to identify areas of improvement and achieve better academic outcomes.
+        </p>
+    </div>
+</div>
+{% endblock %}
